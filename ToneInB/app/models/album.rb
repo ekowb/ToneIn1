@@ -16,6 +16,8 @@ class Album < ApplicationRecord
         # return main_color
     end
 
+
+
     def self.find_rgb
         self.all.each do |a|
             top_colors = Miro::DominantColors.new(a.image_url)
@@ -46,6 +48,7 @@ class Album < ApplicationRecord
 
         category_hash = [{:name =>"red", :rgb => [255,0,0]}, 
                             {:name => "orange", :rgb => [255,128,0]},
+                            {:name => "orangered", :rgb => [255,90,0]},
                             {:name => "gold", :rgb => [255,215,0]},
                             {:name => "yellow", :rgb => [255, 255, 0]},
                             {:name => "lime", :rgb => [0, 255, 0]},
@@ -94,6 +97,12 @@ class Album < ApplicationRecord
                     a.save
 
             end
+        end
+
+        def self.sort_by_color
+            color_wheel = [ "pink", "salmon", "red", "brown", "magenta", "orangered", "orange", "gold", "yellow", "lime", "green", "cyan", "teal", "blue", "navy",
+            "purple", "lavender", "white", "peachpuff", "silver", "gray", "black"]
+            self.all.sort_by { |a| color_wheel.index(a.color_category) }
         end
 end
 

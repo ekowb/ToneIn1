@@ -6,8 +6,12 @@ class AlbumsController < ApplicationController
     end
 
     def index
-        @albums = Album.all
+        @albums = Album.sort_by_color
         render json: @albums
     end
+
+    private
+
+   
 
 end

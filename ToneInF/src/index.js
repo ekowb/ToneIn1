@@ -4,8 +4,10 @@ const divTag = document.createElement('div');
 const ulTag = document.createElement('ul');
 const liTag = document.createElement('li');
 divTag.className = "grid-container"
+divTag.id = "album-hold"
 console.log(divTag)
 const selectTag = document.createElement('select')
+selectTag.className = 'custom-select'
 const select2 = document.createElement('select')
 // Arrays
 const genres = ["Choose a Genre", "Alternative", "Blues", "Christian", "Country", "Dance", "Electronic", "Hip-Hop/Rap", "Jazz", "Latin", "Pop", "R&B/Soul", "Rock"]
@@ -29,11 +31,10 @@ colorWheel.forEach(function(e){
 })
 
 
-
 // JSON Fetch
 selectTag.addEventListener('change', function(f){
     f.preventDefault()
-    let divOn = document.querySelector("div")
+    let divOn = document.getElementById('album-hold')
     divOn.innerHTML = ""
     console.log(f.target.value)
 
@@ -41,11 +42,11 @@ selectTag.addEventListener('change', function(f){
     .then(resp => resp.json())
     .then(data => {
     data.forEach(function(e){
-        if (e.genre === f.target.value) {
-            var gridTag = document.createElement('div');
+        // if (e.genre === f.target.value) {
+            var gridTag = document.createElement('span');
             gridTag.className = "grid-item"
             gridTag.innerHTML = `<img src= ${e.image_url}>`
-            gridTag.style.backgroundColor = e.color_category
+            //gridTag.style.backgroundColor = e.color_category
             //"rgb(" + JSON.parse(e.rgb) + ")"
 
             gridTag.addEventListener('click', function(g){
@@ -66,9 +67,8 @@ selectTag.addEventListener('change', function(f){
 
 
           //  difference = sqrt((rgbArray[0] - red2)^2 + (rgbArray[1] - green2)^2 + (rgbArray[2] - blue2)^2)
-          if (e.color_category == "navy") {
+          
             divOn.appendChild(gridTag)
-          }
             
             
             
@@ -85,7 +85,8 @@ selectTag.addEventListener('change', function(f){
         //         divOn.appendChild(gridTag)
         //     }
     }
-    })
+   // }
+   )
 })
 
     

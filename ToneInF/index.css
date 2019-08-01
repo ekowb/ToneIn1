@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap');
+
+
+
+body {
+  color: white;
+  background-color: #d3212d;
+  background-image: linear-gradient(319deg, black 0%, teal 70%, #009245 75%, #ffbf00 80%,  #d3212d 95%, pink 100%);
+  
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  
+
+}
+
+.changeColor {
+  background: white;
+}
+
+.custom-select {
+  width:200px;
+  font-size: 20px;
+  background-color: pink;
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+.dot1 {
+  height: 50px;
+  width: 50px;
+  background-color: #EC2049;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot2 {
+  height: 50px;
+  width: 50px;
+  background-color: #F26B38;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot3 {
+  height: 50px;
+  width: 50px;
+  background-color: #F7DB4F;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot4 {
+  height: 50px;
+  width: 50px;
+  background-color: #2F9599;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.grid-item {
+    padding: 0.85rem 0.85rem;
+    font-weight: 700;
+    }
+.card-body {
+   
+    padding: 0.55rem 0.85rem;
+    background-color: #ffbf00; 
+    }
+
