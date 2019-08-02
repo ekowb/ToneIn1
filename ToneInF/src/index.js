@@ -3,6 +3,7 @@ const bodyTag = document.querySelector('body');
 const divTag = document.createElement('div');
 const ulTag = document.createElement('ul');
 const liTag = document.createElement('li');
+const headTag = document.querySelector('h1');
 divTag.className = "grid-container"
 divTag.id = "album-hold"
 console.log(divTag)
@@ -35,7 +36,8 @@ daColors = document.getElementById('colorwheel1')
 // JSON Fetch
 daColors.addEventListener('click', function(f){
        f.preventDefault()
-       console.log(f.target)
+       console.dir(f.target)
+   if (f.target.nodeName === "SPAN") {
     let divOn = document.getElementById('album-hold')
     divOn.innerHTML = ""
    //console.log(f.target.value)
@@ -44,7 +46,8 @@ daColors.addEventListener('click', function(f){
     .then(resp => resp.json())
     .then(data => {
     data.forEach(function(e){
-        if (e.color_category === f.target.className) {
+        if (f.target.className === e.color_category) {
+            f.preventDefault()
 
             // window.getComputedStyle(bodyTag).backgroundColor = window.getComputedStyle(f.target).backgroundColor
             var gridTag = document.createElement('span');
@@ -53,8 +56,14 @@ daColors.addEventListener('click', function(f){
             // gridTag.style.backgroundColor = e.color_category
             bodyTag.style.backgroundColor = window.getComputedStyle(f.target).backgroundColor
             //"rgb(" + JSON.parse(e.rgb) + ")"
-
-           
+            headTag.innerHTML = f.target.className.charAt(0).toUpperCase() + f.target.className.slice(1)
+            console.log(headTag.style.color)
+            // if (f.target.className = "white") {
+            //     headTag.style.color = "black"
+            // }
+            // else {
+            //     headTag.style.color = "white"
+            // }
             
         
             str1 = `${gridTag.style.backgroundColor}`.slice(4)
@@ -94,9 +103,13 @@ daColors.addEventListener('click', function(f){
   
             
             }
+            else {
+
+            }
    // })
 })
-})})
+})}
+})
 
     
 //})
