@@ -58,7 +58,6 @@ class Album < ApplicationRecord
                             {:name => "blue", :rgb => [0,0,255]},
                             {:name => "navy", :rgb => [0,0,128]},
                             {:name => "purple", :rgb => [128,0,128]},
-                            {:name => "magenta", :rgb => [255,0,255]},
                             {:name => "pink", :rgb => [255, 153, 204]},
                             {:name => "salmon", :rgb => [250, 128, 114]},
                             {:name => "lavender", :rgb => [230, 230, 250]},
@@ -93,7 +92,22 @@ class Album < ApplicationRecord
                         
                         
                     end
-                    a.color_category = closest_category
+
+                    if closest_category == "yellow" || closest_category == "lime"
+                        a.color_category = "green"
+                    elsif closest_category == "navy" || closest_category == "cyan"
+                        a.color_category = "blue"
+                    elsif closest_category == "salmon"
+                        a.color_category = "pink"
+                    elsif closest_category == "lavender"
+                        a.color_category = "white"
+                    elsif closest_category == "silver"
+                        a.color_category = "gray"
+                    elsif closest_category == "orangered"
+                        a.color_category = "orange"
+                    else
+                        a.color_category = closest_category
+                    end
                     a.save
 
             end

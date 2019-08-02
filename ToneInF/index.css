@@ -5,14 +5,11 @@
 
 body {
   color: white;
-  background-color: #d3212d;
-  background-image: linear-gradient(319deg, black 0%, teal 70%, #009245 75%, #ffbf00 80%,  #d3212d 95%, pink 100%);
   
   font-family: 'Red Hat Text', sans-serif;
   font-size: 12px;
-  
 
-}
+} 
 
 .changeColor {
   background: white;
@@ -34,6 +31,18 @@ body {
   background-color: DodgerBlue;
 }
 
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .select-selected:after {
   position: absolute;
   content: "";
@@ -44,36 +53,87 @@ body {
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
 }
-.dot1 {
+.red {
   height: 50px;
   width: 50px;
   background-color: #EC2049;
   border-radius: 50%;
   display: inline-block;
 }
-.dot2 {
+.orange {
   height: 50px;
   width: 50px;
   background-color: #F26B38;
   border-radius: 50%;
   display: inline-block;
 }
-.dot3 {
+.gold {
   height: 50px;
   width: 50px;
   background-color: #F7DB4F;
   border-radius: 50%;
   display: inline-block;
 }
-.dot4 {
+.green {
+  height: 50px;
+  width: 50px;
+  background-color: #859900;
+  border-radius: 50%;
+  display: inline-block;
+}
+.teal {
+  height: 50px;
+  width: 50px;
+  background-color:teal;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.blue {
   height: 50px;
   width: 50px;
   background-color: #2F9599;
   border-radius: 50%;
   display: inline-block;
 }
+.purple {
+  height: 50px;
+  width: 50px;
+  background-color: #6c71c4;
+  border-radius: 50%;
+  display: inline-block;
+}
+.pink {
+  height: 50px;
+  width: 50px;
+  background-color: pink ;
+  border-radius: 50%;
+  display: inline-block;
+}
+.peachpuff {
+  height: 50px;
+  width: 50px;
+  background-color: peachpuff ;
+  border-radius: 50%;
+  display: inline-block;
+}
+.white {
+  height: 50px;
+  width: 50px;
+  background-color: #fffff0 ;
+  border-radius: 50%;
+  display: inline-block;
+}
+.black {
+  height: 50px;
+  width: 50px;
+  background-color: #2f2f29 ;
+  border-radius: 50%;
+  display: inline-block;
+}
 
 .grid-item {
+    position: relative;
     padding: 0.85rem 0.85rem;
     font-weight: 700;
     }
