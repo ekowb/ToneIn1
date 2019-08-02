@@ -14,6 +14,24 @@ const select2 = document.createElement('select')
 const genres = ["Choose a Genre", "Alternative", "Blues", "Christian", "Country", "Dance", "Electronic", "Hip-Hop/Rap", "Jazz", "Latin", "Pop", "R&B/Soul", "Rock"]
 const colorWheel = ["red", "orange", "gold", "green", "teal", "blue", 
 "purple", "pink", "brown", "peachpuff", "gray", "white", "black"]
+
+
+
+var modal = document.querySelector(".modal");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+
 // const colorPicker = document.createElement('input')
 // colorPicker.type = 'color'
 // console.log(colorPicker)
@@ -100,6 +118,8 @@ daColors.addEventListener('click', function(f){
                 // gridTag.removeChild(kid)
                 grid2.style.opacity = 0;
             })
+
+            gridTag.addEventListener("click", toggleModal) 
   
             
             }
