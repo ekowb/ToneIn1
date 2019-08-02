@@ -65,13 +65,31 @@ daColors.addEventListener('click', function(f){
             let grid2 = document.createElement('div')
             grid2.className = 'text-block'
             grid2.id = "text1"
+            grid2.innerHTML = `<h4>${e.title}</h4> <p>${e.artist}</p>`
             gridTag.appendChild(grid2)
+            grid2.style.opacity = 0;
+            
 
             gridTag.addEventListener('mouseover', function(g) {
-                gridP = document.getElementById('text1')
-                console.log(gridP)
-                gridP.innerHTML = `<h4>${e.title}</h4> <p>${e.artist}</p>`
+                g.preventDefault()
+
+                grid2.style.opacity = 100;
+                //console.log(gridTag)
+                //console.log(gridTag.children)
+             //   if (gridTag.children[1] == null) {
+                    
+                    
+             //   }
+                //console.log(gridP)
                 
+                
+            })
+
+            gridTag.addEventListener('mouseout', function(h) {
+                h.preventDefault()
+                // kid = gridTag.children[1]
+                // gridTag.removeChild(kid)
+                grid2.style.opacity = 0;
             })
   
             
